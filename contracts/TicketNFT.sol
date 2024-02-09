@@ -9,4 +9,10 @@ import {ITicketNFT} from "./interfaces/ITicketNFT.sol";
 
 contract TicketNFT is ERC1155, ITicketNFT {
     // your code goes here (you can do it!)
+    constructor() ERC1155("https://csc2125hwk3/ticket/{id}.json") {
+    }
+
+    function mintFromMarketPlace(address to, uint256 nftId) external override {
+        _mint(to, nftId, 1, "");
+    }
 }
