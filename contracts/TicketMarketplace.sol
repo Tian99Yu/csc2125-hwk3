@@ -67,7 +67,7 @@ contract TicketMarketplace is ITicketMarketplace {
         emit PriceUpdate(eventId, price, ERC20_TYPE);
     }
 
-    function getNftId(uint128 eventId, uint128 ticketCount) internal returns(uint256){
+    function getNftId(uint128 eventId, uint128 ticketCount) internal pure returns(uint256){
         return ((uint256)(eventId) << 128) + ticketCount;
     }
 
